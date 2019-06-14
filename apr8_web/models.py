@@ -26,16 +26,20 @@ class PlayerSeason(models.Model):
                                                             MaxValueValidator(16)])
     pass_completions = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     pass_attempts = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
-    comp_percent = models.FloatField(default=0, validators=[MinValueValidator(0)])
+    # comp_percent = models.FloatField(default=0, validators=[MinValueValidator(0)])
     passing_yards = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     touchdowns = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
-    td_percent = models.FloatField(default=0, validators=[MinValueValidator(0)])
+    # td_percent = models.FloatField(default=0, validators=[MinValueValidator(0)])
     interceptions = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
-    int_percent = models.FloatField(default=0, validators=[MinValueValidator(0)])
+    # int_percent = models.FloatField(default=0, validators=[MinValueValidator(0)])
     passer_rating = models.FloatField(default=0, validators=[MinValueValidator(0)])
-    passer_rating_plus = models.FloatField(default=0, validators=[MinValueValidator(0)])
+    # passer_rating_plus = models.FloatField(default=0, validators=[MinValueValidator(0)])
 
+    # str method
     def __str__(self):
         return str(self.season) + ": " + self.player.player_name
     # end str
+
+    # create methods for the above rate stats below:
+
 # end class()
