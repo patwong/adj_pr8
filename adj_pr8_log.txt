@@ -1,0 +1,17 @@
+2019.06.12
+- created adj_pr8 project
+- configured <root>/urls.py
+
+2019.06.13
+- created base models for adj_pr8
+	- Player: parent relation to PlayerSeason
+		- unique attributes are the player's name and position
+	- PlayerSeason: the stats for a player in a given season
+		- foreign key: player.player_name
+		- remaining attributes are key stats for the season
+- added yamjam to obfuscate sensitive information
+- executed first migrate to create tables in database
+
+2019.07.06
+- created milestone checklist in notes to monitor progress
+- 
