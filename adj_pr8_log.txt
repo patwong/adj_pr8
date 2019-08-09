@@ -14,4 +14,12 @@
 
 2019.07.06
 - created milestone checklist in notes to monitor progress
-- 
+
+2019.08.08
+- modified Player model
+	- removed 'player_name' as primary key for Player because name may not be unique
+	- added 'player_id' (for pro-fb ref) to Player
+	- allow django to create default 'id' as unique identifier for Player
+- modified PlayerSeason model
+	- add passer_rating to be a column in the PlayerSeason table for now
+- existing tables in adj_pr8 db removed for fresh initial migration; modifying primary keys too messy

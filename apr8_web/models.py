@@ -4,7 +4,9 @@ import datetime
 
 
 class Player(models.Model):
-    player_name = models.CharField(max_length=200, primary_key=True)
+    # id = models.BigIntegerField(default=0, primary_key=True)
+    player_id = models.CharField(default='', max_length=200)
+    player_name = models.CharField(max_length=200)
     player_position = models.CharField(max_length=200)
 
     def __str__(self):
@@ -15,6 +17,7 @@ class Player(models.Model):
 
 class PlayerSeason(models.Model):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
+    # player_name = models.CharField(max_length=200)
     season = models.PositiveIntegerField(default=datetime.datetime.now().year,
                                          validators=[MinValueValidator(1920),
                                                      MaxValueValidator(datetime.datetime.now().year)])
@@ -32,7 +35,7 @@ class PlayerSeason(models.Model):
     # td_percent = models.FloatField(default=0, validators=[MinValueValidator(0)])
     interceptions = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     # int_percent = models.FloatField(default=0, validators=[MinValueValidator(0)])
-    passer_rating = models.FloatField(default=0, validators=[MinValueValidator(0)])
+    passer_rating = models.FloatField(default=0, validators=[MinValueValidator(0), MaxValueValidator(158.3)])
     # passer_rating_plus = models.FloatField(default=0, validators=[MinValueValidator(0)])
 
     # str method
